@@ -1,5 +1,6 @@
 package com.example.Evaluacion.Spring.Servicios;
 
+import com.example.Evaluacion.Spring.Controlador.ControladorProductos;
 import com.example.Evaluacion.Spring.Entidades.Productos;
 
 import java.util.ArrayList;
@@ -26,6 +27,32 @@ public class ServiciosProductos {
 
     public ArrayList<Productos> mostrar(){
         return lista;
+    }
+
+    public ArrayList<Productos> total(){
+        for(Productos productos:lista){
+            productos.setTotal(productos.getCantidad()*productos.getPrecio());
+        }
+        return lista;
+    }
+
+    public ArrayList<Productos> iva(){
+        for(Productos productos:lista){
+            productos.setTotal((productos.getTotal()*19)/100);
+        }
+        return lista;
+    }
+
+    public Productos buscar(String categoria){
+        Productos pro=null;
+        for(Productos p: lista){
+            if(p.getCategoria() == categoria){
+                pro=p;
+            }
+        }
+
+        return pro;
+
     }
 
 }
