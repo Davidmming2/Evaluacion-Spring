@@ -56,8 +56,7 @@ public class ControladorProductos {
     }
 
     @GetMapping("/buscar/{cate}")
-    public Productos buscar(@PathVariable("cate") String categoria){
-        return servicio.buscar(categoria);
+    public ArrayList<Productos> buscar(@PathVariable("cate") String categoria){
+        return servicio.buscarC(categoria);
     }
-
 }

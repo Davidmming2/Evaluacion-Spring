@@ -80,16 +80,14 @@ public class ServiciosProductos {
     }
 
 
-    public Productos buscar(String categoria){
-        Productos pro=null;
+    public ArrayList<Productos> buscarC (String categoria){
+        ArrayList<Productos>buscar = new ArrayList<>();
         for(Productos p: lista){
-            if(p.getCategoria() == categoria){
-                pro=p;
+            if(p.getCategoria().equals(categoria)){
+                buscar.add(p);
             }
         }
-
-        return pro;
-
+        return buscar;
     }
 
 }
