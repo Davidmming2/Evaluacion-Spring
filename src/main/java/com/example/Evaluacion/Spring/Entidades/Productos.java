@@ -14,13 +14,19 @@ public class Productos {
 
     private double total;
 
-    public Productos(int codigo, String nombre, String categoria, double precio, int cantidad, double total) {
+    private double iva;
+
+    private double descuento;
+
+    public Productos(int codigo, String nombre, String categoria, double precio, int cantidad, double total, double iva, double descuento) {
         this.codigo = codigo;
         this.nombre = nombre;
         this.categoria = categoria;
         this.precio = precio;
         this.cantidad = cantidad;
         this.total = total;
+        this.iva = iva;
+        this.descuento = descuento;
     }
 
     public int getCodigo() {
@@ -69,5 +75,21 @@ public class Productos {
 
     public void setTotal(double total) {
         this.total = total;
+    }
+
+    public double getIva() {
+        return iva;
+    }
+
+    public void setIva(double iva) {
+        this.iva = iva;
+    }
+
+    public double getDescuento() {
+        return descuento;
+    }
+
+    public void setDescuento(double descuento) {
+        this.descuento = descuento;
     }
 }

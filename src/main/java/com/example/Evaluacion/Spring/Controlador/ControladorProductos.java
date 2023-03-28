@@ -30,6 +30,31 @@ public class ControladorProductos {
         return servicio.iva();
     }
 
+    @GetMapping("/totalIva")
+    public ArrayList<Productos> totaliva(){
+        return servicio.totalIva();
+    }
+
+    @GetMapping("/descuento")
+    public ArrayList<Productos> descuento(){
+        return servicio.descuento();
+    }
+
+    @GetMapping("/condescuento")
+    public ArrayList<Productos> condescuento(){
+        return servicio.condescuento();
+    }
+
+    @GetMapping("/actualizarDescuento")
+    public ArrayList<Productos> actualizarDescuento(){
+        return servicio.actualizarDescuento();
+    }
+
+    @GetMapping("/grandescuento")
+    public ArrayList<Productos> grandescuento(){
+        return servicio.grandescuento();
+    }
+
     @GetMapping("/buscar/{cate}")
     public Productos buscar(@PathVariable("cate") String categoria){
         return servicio.buscar(categoria);
