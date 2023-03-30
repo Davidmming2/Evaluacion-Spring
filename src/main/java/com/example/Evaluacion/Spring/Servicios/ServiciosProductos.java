@@ -29,6 +29,11 @@ public class ServiciosProductos {
         return lista;
     }
 
+    public String agregarProductos(Productos productos){
+        lista.add(productos);
+            return "El producto se registro exitosamente";
+        }
+
     public ArrayList<Productos> total(){
         for(Productos productos:lista){
             productos.setTotal(productos.getCantidad()*productos.getPrecio());

@@ -3,9 +3,8 @@ package com.example.Evaluacion.Spring.Controlador;
 
 import com.example.Evaluacion.Spring.Entidades.Productos;
 import com.example.Evaluacion.Spring.Servicios.ServiciosProductos;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
 import java.util.ArrayList;
 
 
@@ -19,6 +18,9 @@ public class ControladorProductos {
     public ArrayList<Productos> listar(){
         return servicio.mostrar();
     }
+
+    @PostMapping("/agregarProdcuto")
+    public String agregar(@RequestBody Productos productos){return servicio.agregarProductos(productos);}
 
     @GetMapping("/total")
     public ArrayList<Productos> actualizartotal(){
