@@ -95,4 +95,14 @@ public class ServiciosProductos {
         return buscar;
     }
 
+    public String eliminar (int cantidad){
+        String valor="No se encontro el producto";
+        for (Productos p: lista){
+            if(p.getCantidad() <= cantidad){
+                valor="Producto eliminado con exito";
+            }
+        }
+        return valor;
+    }
+
 }

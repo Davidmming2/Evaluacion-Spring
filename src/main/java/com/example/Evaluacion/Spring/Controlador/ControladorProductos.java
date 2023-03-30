@@ -21,7 +21,7 @@ public class ControladorProductos {
         return servicio.mostrar();
     }
 
-    @PostMapping("/agregarProdcuto")
+    @PostMapping("/agregarProducto")
     public String agregar(@RequestBody Productos productos){return servicio.agregarProductos(productos);}
 
     @GetMapping("/total")
@@ -63,5 +63,8 @@ public class ControladorProductos {
     public ArrayList<Productos> buscar(@PathVariable("cate") String categoria){
         return servicio.buscarC(categoria);
     }
+
+    @DeleteMapping("/eliminarCantidades/{canti}")
+    public String eliminar(@PathVariable("canti") Integer cantidad){return servicio.eliminar(cantidad);}
 }
 
