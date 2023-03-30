@@ -54,7 +54,7 @@ public class ControladorProductos {
         return servicio.actualizarDescuento();
     }
 
-    @GetMapping("/grandescuento")
+    @GetMapping("/grandescuento...")
     public ArrayList<Productos> grandescuento(){
         return servicio.grandescuento();
     }
