@@ -1,13 +1,15 @@
 package com.example.Evaluacion.Spring.Controlador;
 
-
 import com.example.Evaluacion.Spring.Entidades.Productos;
 import com.example.Evaluacion.Spring.Servicios.ServiciosProductos;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 
 
+@CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
 public class ControladorProductos {
 
@@ -23,7 +25,7 @@ public class ControladorProductos {
     public String agregar(@RequestBody Productos productos){return servicio.agregarProductos(productos);}
 
     @GetMapping("/total")
-    public ArrayList<Productos> actualizartotal(){
+    public ArrayList<Productos> total(){
         return servicio.total();
     }
 
@@ -62,3 +64,4 @@ public class ControladorProductos {
         return servicio.buscarC(categoria);
     }
 }
+
