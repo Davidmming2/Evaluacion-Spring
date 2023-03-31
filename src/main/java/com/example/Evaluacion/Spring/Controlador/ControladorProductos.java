@@ -65,6 +65,6 @@ public class ControladorProductos {
     }
 
     @DeleteMapping("/eliminarCantidades/{canti}")
-    public String eliminar(@PathVariable("canti") Integer cantidad){return servicio.eliminar(cantidad);}
+    public ArrayList<Productos> eliminar(@PathVariable("canti") Integer cantidad){return servicio.eliminar(cantidad);}
 }
 

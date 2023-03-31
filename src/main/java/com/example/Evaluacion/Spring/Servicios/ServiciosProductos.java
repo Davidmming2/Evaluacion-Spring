@@ -1,6 +1,5 @@
 package com.example.Evaluacion.Spring.Servicios;
 
-import com.example.Evaluacion.Spring.Controlador.ControladorProductos;
 import com.example.Evaluacion.Spring.Entidades.Productos;
 
 import java.util.ArrayList;
@@ -95,14 +94,14 @@ public class ServiciosProductos {
         return buscar;
     }
 
-    public String eliminar (int cantidad){
+    public ArrayList<Productos> eliminar (int cantidad){
         String valor="No se encontro el producto";
         for (Productos p: lista){
             if(p.getCantidad() <= cantidad){
                 valor="Producto eliminado con exito";
             }
         }
-        return valor;
+        return lista;
     }
 
 }
